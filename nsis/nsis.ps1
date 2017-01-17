@@ -1,7 +1,8 @@
 param(
     [string]$scriptFile,
     [string]$justInclude,
-    [string]$arguments
+    [string]$arguments,
+	[string]$includeMorePlugins
 )
 
 foreach($key in $PSBoundParameters.Keys)
@@ -30,12 +31,23 @@ if(!(Test-Path $output)){
 
 	[io.compression.zipfile]::ExtractToDirectory($output, $destination)
 
+	$directories = Get-ChildItem -Path $destination
+	$nsis3Directory = $directories[0].FullName
+
+	if($includeMorePlugins -eq "yes")
+	{
+		$pluginPath = $path + "\plugins\*"
+		$pluginOutput = $nsis3Directory + "\plugins\x86-ansi"
+		Copy-Item $pluginPath $pluginOutput -force
+	}
+	
     Write-Output "Time taken (DL + unzip): $((Get-Date).Subtract($start_time).Seconds) second(s)"
+} else {
+	$directories = Get-ChildItem -Path $destination
+	$nsis3Directory = $directories[0].FullName
 }
 
-$directories = Get-ChildItem -Path $destination
-
-$nsis3Exe = $directories[0].FullName + "\makensis.exe"
+$nsis3Exe = $nsis3Directory + "\makensis.exe"
 
 $env:NSIS_EXE = $nsis3Exe
 Write-Host("##vso[task.setvariable variable=NSIS_EXE;]$nsis3Exe")

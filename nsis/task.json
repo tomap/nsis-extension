@@ -63,7 +63,20 @@
                 "yes": "yes",
                 "no": "no"
             }
+        },
+        {
+            "name": "includeMorePlugins",
+            "type": "radio",
+            "label": "Include additional plugins",
+            "defaultValue": "no",
+            "helpMarkDown": "Should we also add more Nsis plugins to the plugin folder?",
+            "required": "true",
+            "options": {
+                "yes": "yes",
+                "no": "no"
+            }
         }     
+
     ],
     "execution": {
         "PowerShell": {
