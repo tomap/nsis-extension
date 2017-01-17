@@ -3,7 +3,8 @@
     "id": "nsis-task",
     "name": "Nsis Build Task",
     "version": "0.1.2",
-    "publisher": "ThomasP",    
+    "publisher": "ThomasP",
+    "public": true,
     "icons": {
         "default": "extension-icon.png"
     },

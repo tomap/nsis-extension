@@ -17,7 +17,7 @@ To test that the task works properly, you can download [install.nsi](../blob/mas
 
 # Availability
 
-This extension is available on VSTS Marketplace: (soon)
+This extension is publicly available on VSTS Marketplace: (soon)
 
 It is build in VSTS using VSTS Developer Tools Build Task (https://marketplace.visualstudio.com/items?itemName=ms-devlabs.vsts-developer-tools-build-tasks).
 Here is the status: ![Build status](https://tomap.visualstudio.com/_apis/public/build/definitions/6d190468-0f5e-4624-9d49-8446c00b4b51/1/badge)
