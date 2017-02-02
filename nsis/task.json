@@ -3,7 +3,7 @@
     "name": "nsis",
     "friendlyName": "Nsis",
     "description": "Run Nsis",
-    "helpMarkDown": "Run Nsis",
+    "helpMarkDown": "Run Nsis [More Information](https://github.com/tomap/nsis-extension)",
     "category": "Build",
     "author": "tomap",
     "version": {
