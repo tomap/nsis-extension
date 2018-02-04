@@ -13,9 +13,9 @@ This extension can be used to build nsis script or to make nsis available for ot
 * Either select your nsi script (and build arguments: http://nsis.sourceforge.net/Docs/Chapter3.html#usagereference)
 * Or just include NSIS as an environement variable called NSIS_EXE that you can use in the following tasks.
 
-There is also an option called "Include additional plugins". If you check this option, the content of the folder [nsis/plugins](../blob/master/nsis/plugins/) will be copied to the nsis plugin folder and thos plugins will be made available to you nsis script.
+There is also an option called "Include additional plugins". If you check this option, the content of the folder [nsis/plugins](../master/nsis/plugins/) will be copied to the nsis plugin folder and thos plugins will be made available to you nsis script.
 
-To test that the task works properly, you can download [install.nsi](../blob/master/install.nsi) and use it as a test script.
+To test that the task works properly, you can download [install.nsi](../master/install.nsi) and use it as a test script.
 
 ## Plugins
 
@@ -57,4 +57,4 @@ The build number is automaticaly incremented on each commit by the VSTS Build ta
 
 # License
 
-This extension is published under MIT license. See [license file](../blob/master/LICENSE).
+This extension is published under MIT license. See [license file](../master/LICENSE).
