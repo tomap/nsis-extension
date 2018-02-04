@@ -13,7 +13,38 @@ This extension can be used to build nsis script or to make nsis available for ot
 * Either select your nsi script (and build arguments: http://nsis.sourceforge.net/Docs/Chapter3.html#usagereference)
 * Or just include NSIS as an environement variable called NSIS_EXE that you can use in the following tasks.
 
+There is also an option called "Include additional plugins". If you check this option, the content of the folder [nsis/plugins](../blob/master/nsis/plugins/) will be copied to the nsis plugin folder and thos plugins will be made available to you nsis script.
+
 To test that the task works properly, you can download [install.nsi](../blob/master/install.nsi) and use it as a test script.
+
+## Plugins
+
+The nsis/plugins folder contains multiple plugins that were found on nsis web site:
+* [SimpleSC](http://nsis.sourceforge.net/NSIS_Simple_Service_Plugin) NSIS Simple Service Plugin (license MPL / LGPL)
+* ``Services2``, another plugin to manage services
+Examples:
+```
+services2::IsServiceRunning "w3svc"
+Pop $0
+  ${If} $0 == "Yes"
+...
+  ${Else}
+...
+  ${EndIf}
+```
+``services2::IsServiceInstalled "w3wp"`` work the same
+Also:
+```
+services2::SendServiceCommandWait "start" "w3wp" "120"
+  Pop $0
+  ${If} $0 == "Ok"
+...
+  ${Else}
+  ...
+  ${Endif}
+```
+* there are other plugins _to be documented_
+
 
 # Availability
 
