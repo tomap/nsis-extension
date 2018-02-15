@@ -21,6 +21,9 @@ if(!(Test-Path $output)){
 
 	$url = "https://sourceforge.net/projects/nsis/files/NSIS%203/3.01/nsis-3.01.zip/download"
 	
+	# Enable Tls 1.2
+	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+	
     $start_time = Get-Date
     
     $webClient = new-object System.Net.WebClient
