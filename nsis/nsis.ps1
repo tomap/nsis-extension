@@ -16,7 +16,7 @@ $output = $path + "\nsis.zip"
 
 $destination = $path + "\nsis"
 
-if(!(Test-Path $output)){
+if(!(Test-Path $destination)){
 
     $start_time = Get-Date
 
