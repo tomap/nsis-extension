@@ -12,13 +12,33 @@ foreach($key in $PSBoundParameters.Keys)
 
 $path = split-path $MyInvocation.MyCommand.Path
 
-
 $output = $path + "\nsis.zip"
 
 $destination = $path + "\nsis"
 
-$directories = Get-ChildItem -Path $destination
-$nsis3Directory = $directories[0].FullName
+if(!(Test-Path $output)){
+
+    $start_time = Get-Date
+
+	Add-Type -assembly "system.io.compression.filesystem"
+
+	[io.compression.zipfile]::ExtractToDirectory($output, $destination)
+
+	$directories = Get-ChildItem -Path $destination
+	$nsis3Directory = $directories[0].FullName
+
+	if($includeMorePlugins -eq "yes")
+	{
+		$pluginPath = $path + "\plugins\*"
+		$pluginOutput = $nsis3Directory + "\plugins\x86-ansi"
+		Copy-Item $pluginPath $pluginOutput -force
+	}
+	
+    Write-Output "Time taken (Unzip): $((Get-Date).Subtract($start_time).Seconds) second(s)"
+} else {
+	$directories = Get-ChildItem -Path $destination
+	$nsis3Directory = $directories[0].FullName
+}
 
 $nsis3Exe = $nsis3Directory + "\makensis.exe"
 
