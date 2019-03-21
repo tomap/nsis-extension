@@ -32,6 +32,10 @@ if(!(Test-Path $destination)){
 		$pluginPath = $path + "\plugins\*"
 		$pluginOutput = $nsis3Directory + "\plugins\x86-ansi"
 		Copy-Item $pluginPath $pluginOutput -force
+		
+		$includePath = $path + "\include\*"
+		$includeOutput = $nsis3Directory + "\include"
+		Copy-Item $includePath $includeOutput -force
 	}
 	
     Write-Output "Time taken (Unzip): $((Get-Date).Subtract($start_time).Seconds) second(s)"
