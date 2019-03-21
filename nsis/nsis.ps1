@@ -67,7 +67,7 @@ if($justInclude -eq "no")
 
     Write-Host("Executing nsis $nsis3Exe with args: $args")
 
-    Invoke-Tool -Path $nsis3Exe -Arguments $args
+    Invoke-VstsTool -FileName $nsis3Exe -Arguments $args
 }
 else
 {
