@@ -1,9 +1,9 @@
-# Looking for someone to maintain this project
+# Use forked version
 
-Hi, I'm looking for someone to take over this project as I no longer have time to dedicate to it.
+Please use this forked repo: https://github.com/dev-maxima/nsis-extension
+This repo is no longer active
 
-If you would like to do so, please contact me via an issue, make a fork and do your first change.
-I can help you set up the CI and indicate on this README who is maintaining the project (name & url).
+The new version is here: https://marketplace.visualstudio.com/items?itemName=bizeta.nsis-task
 
 -------------------------------------------------------------
 
